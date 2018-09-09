@@ -25,7 +25,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int centuryFromYear(int year) {
-        //TODO add your code yere
-        return 0;
+        // TODO: add your code here
+
+        int last2digits = Integer.parseInt(Integer.toString(year).substring(2));
+        int century = (year - last2digits)/100;
+
+        if (year > (century * 100)) {
+            return century + 1;
+        } else {
+            return century;
+        }
+
     }
 }
