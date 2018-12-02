@@ -37,6 +37,11 @@ public class Calculator extends AppCompatActivity {
         view.setText(str);
     }
 
+    private TextView getDisplay() {
+        TextView view = (TextView)findViewById(R.id.displayValue);
+        return view;
+    }
+
     public void onNum1(View view) {
         insertNumber(1);
     }
@@ -78,22 +83,30 @@ public class Calculator extends AppCompatActivity {
     }
 
     public void onAdd(View view) {
+        setDisplay("+");
         lastValue = currentValue;
+        currentValue = "";
         operation = "add";
     }
 
     public void onSubtract(View view) {
+        setDisplay("-");
         lastValue = currentValue;
+        currentValue = "";
         operation = "subtract";
     }
 
     public void onMultiply(View view) {
+        setDisplay("*");
         lastValue = currentValue;
+        currentValue = "";
         operation = "multiply";
     }
 
     public void onDivide(View view) {
+        setDisplay("/");
         lastValue = currentValue;
+        currentValue = "";
         operation = "divide";
     }
 
@@ -108,13 +121,13 @@ public class Calculator extends AppCompatActivity {
                     newValue = val1 + val2;
                     break;
                 case "subtract":
-                    newValue = val1 + val2;
+                    newValue = val1 - val2;
                     break;
                 case "multiply":
                     newValue = val1 * val2;
                     break;
-                case "divider":
-                    newValue = val1 / val2;
+                case "divide":
+                    newValue =  val1 / val2;
             }
             setDisplay(Integer.toString(newValue));
         }
@@ -124,5 +137,7 @@ public class Calculator extends AppCompatActivity {
         operation = "";
         currentValue = "";
         lastValue = "";
+
+        setDisplay("");
     }
 }
