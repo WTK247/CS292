@@ -15,7 +15,6 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
         introMessage = (RelativeLayout) findViewById(R.id.welcome_message_layout);
     }
 
@@ -45,18 +44,6 @@ public class Main2Activity extends AppCompatActivity {
 
     public void dismisWelcomeMessageBox(View view) {
         introMessage.setVisibility(View.INVISIBLE);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        System.out.println("MainActivity: onStop");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        System.out.println("MainActivity: onRestart");
     }
 
     public void onNext(View view) {
